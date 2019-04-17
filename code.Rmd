@@ -1,0 +1,12 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+data = read.csv("~/Desktop/github/Stat337FP/breast-cancer.txt")
+print(data)
+str(data)
+
+```
