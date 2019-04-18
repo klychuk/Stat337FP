@@ -5,6 +5,7 @@ output: html_notebook
 
 
 ```{r}
+#this will be different for each user so might need to reformat to test/run
 data = read.csv("~/Desktop/github/Stat337FP/breast-cancer.txt")
 print(data)
 str(data)
