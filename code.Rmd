@@ -8,5 +8,11 @@ output: html_notebook
 data = read.csv("~/Desktop/github/Stat337FP/breast-cancer.txt")
 print(data)
 str(data)
+data[data$left_low == '?',]$left_low = NA
+data[data$no == '?',]$no = NA
+#need to format the data to have some int values for the chi squared
+#chisq.test(data)
 
+lr = glm(no.recurrence.events ~., data = data, family = binomial(logit))
+summary(lr)
 ```
