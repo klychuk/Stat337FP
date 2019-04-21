@@ -7,13 +7,27 @@ output: html_notebook
 ```{r}
 #this will be different for each user so might need to reformat to test/run
 data = read.csv("~/Desktop/github/Stat337FP/breast-cancer.txt")
-print(data)
-str(data)
+as.integer(data$X30.34)
 data[data$left_low == '?',]$left_low = NA
 data[data$no == '?',]$no = NA
-#need to format the data to have some int values for the chi squared
+colnames(data) = c(
+  "reoccurance",
+  "age",
+  "meno",
+  "tmsize",
+  "invnodes",
+  "nodecaps",
+  "maldeg",
+  "breast",
+  "quad",
+  "irradiat"
+)
+str(data)
+#the str funciton shows which variables are ints to be used in a chi squared
 #chisq.test(data)
 
-lr = glm(no.recurrence.events ~., data = data, family = binomial(logit))
+#student's t test compares the two
+
+lr = glm(reoccurance ~., data = data, family = binomial(logit))
 summary(lr)
 ```
