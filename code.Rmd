@@ -25,6 +25,16 @@ colnames(data) = c(
 str(data)
 #the str funciton shows which variables are ints to be used in a chi squared
 #chisq.test(data)
+chisq.test(table(data[,1],data[,2]))
+chisq.test(table(data[,1],data[,3]))
+chisq.test(table(data[,1],data[,4]))
+chisq.test(table(data[,1],data[,5]))
+chisq.test(table(data[,1],data[,6]))
+chisq.test(table(data[,1],data[,7]))
+chisq.test(table(data[,1],data[,8]))
+chisq.test(table(data[,1],data[,9]))
+chisq.test(table(data[,1],data[,10]))
+#wasn't sure which variables to use specifically with the recurrence events so I went with all of them
 
 #student's t test compares the two
 
