@@ -1,0 +1,18 @@
+```{r}
+#t test of quad
+quad = table(data['quad'])
+t.test(cat)
+
+#t sample t test of degree of mal to reoccurance
+rec = table(data['reoccurance'])
+t.test(rec)
+
+lr = table(data['nodecaps'])
+t.test(lr)
+
+t.test(rec,lr)
+
+lr = glm(reoccurance ~., data = data, family = binomial(logit))
+summary(lr)
+
+```
